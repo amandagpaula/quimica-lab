@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Área
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Entrada</ion-label>
+      <ion-select [(ngModel)]="entrada" cancelText="Cancelar" interface="action-sheet">
+        <ion-option value="Metro Quadrado (m²)">Metro Quadrado (m²)</ion-option>
+        <ion-option value="Centímetro Quadrado (cm²)">Centímetro Quadrado (cm²)</ion-option>
+        <ion-option value="Pé Quadrado (ft²)">Pé Quadrado (ft²)</ion-option>
+        <ion-option value="Polegada Quadrada (in²)">Polegada Quadrada (in²)</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Saída</ion-label>
+      <ion-select [(ngModel)]="saida" cancelText="Cancelar" interface="action-sheet">
+        <ion-option value="Metro Quadrado (m²)">Metro Quadrado (m²)</ion-option>
+        <ion-option value="Centímetro Quadrado (cm²)">Centímetro Quadrado (cm²)</ion-option>
+        <ion-option value="Pé Quadrado (ft²)">Pé Quadrado (ft²)</ion-option>
+        <ion-option value="Polegada Quadrada (in²)">Polegada Quadrada (in²)</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Valor</ion-label>
+      <ion-input type="number" [(ngModel)]="valor"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full (click)="converter()">Converter</button>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full color="light" (click)="resetar()">Resetar</button>
+    </ion-item>
+
+  </ion-list>
+    <ion-card [@resultadoState]="state">
+
+    <ion-card-header>
+      Resultado
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-row>
+        <b>entrada:</b> {{ valor }} em {{ entrada }}
+      </ion-row>
+      <ion-row>
+        <b>saída:</b> {{ resultado }} em {{ saida }}
+      </ion-row>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
+
+

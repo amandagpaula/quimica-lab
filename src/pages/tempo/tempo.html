@@ -1,0 +1,43 @@
+<!--
+  Generated template for the TempoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Tempo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-input placeholder="Entrada"[(ngModel)]="Entrada"></ion-input>
+          <ion-label></ion-label>
+          <ion-select [(ngModel)]="tempo">
+            <ion-option value="ano">Ano</ion-option>
+            <ion-option value="dia">Dia</ion-option>
+            <ion-option value="hora">Hora (H)</ion-option>
+            <ion-option value="Minuto">Minuto (min)</ion-option>
+            <ion-option value="Segundo">Segundo (s)</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Saída</ion-label>
+          <ion-label></ion-label>
+          <ion-select [(ngModel)]="tempo1">
+              <ion-option value="ano1">Ano</ion-option>
+              <ion-option value="dia1">Dia</ion-option>
+              <ion-option value="hora1">Hora (H)</ion-option>
+              <ion-option value="Minuto1">Minuto (min)</ion-option>
+              <ion-option value="Segundo1">Segundo (s)</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <button ion-button full (click)="Converter()">Converter</button>
+
+</ion-content>

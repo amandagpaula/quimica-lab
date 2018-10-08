@@ -1,0 +1,18 @@
+page-login {
+    ion-title * {
+        margin-top: 2vh;
+        margin-bottom: 5vh;
+    }
+    img{
+        margin-top: 3vh;
+        width: 70%;
+    }
+    .button-clear-md {
+        border-color: transparent;
+        color: #ada9a9;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        opacity: 1;
+    }
+}

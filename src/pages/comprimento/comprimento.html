@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Comprimento
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Entrada</ion-label>
+      <ion-select [(ngModel)]="entradac" cancelText="Cancelar" interface="action-sheet">
+        <ion-option value="metro">Metro (m)</ion-option>
+        <ion-option value="centimetro">Centímetro (cm)</ion-option>
+        <ion-option value="pe">Pé (ft)</ion-option>
+        <ion-option value="polegada">Polegada (in)</ion-option>
+        <ion-option value="milha">Milha</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Saída</ion-label>
+      <ion-select [(ngModel)]="saidac" cancelText="Cancelar" interface="action-sheet">
+        <ion-option value="metro">Metro (m)</ion-option>
+        <ion-option value="centimetro">Centímetro (cm)</ion-option>
+        <ion-option value="pe">Pé (ft)</ion-option>
+        <ion-option value="polegada">Polegada (in)</ion-option>
+        <ion-option value="milha">Milha</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Valor</ion-label>
+      <ion-input type="number" [(ngModel)]="valorc"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full (click)="converter()">Converter</button>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full color="light" (click)="resetar()">Resetar</button>
+    </ion-item>
+
+  </ion-list>
+    <ion-card [@resultadoState]="state">
+
+    <ion-card-header>
+      Resultado
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-row>
+        <b>entrada:</b> {{ valorc }} em {{ entradac }}
+      </ion-row>
+      <ion-row>
+        <b>saída:</b> {{ resultadoc }} em {{ saidac }}
+      </ion-row>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
+

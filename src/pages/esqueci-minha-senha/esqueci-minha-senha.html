@@ -1,0 +1,23 @@
+<!--
+  Generated template for the EsqueciMinhaSenhaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content padding>
+  <ion-title>Esqueceu sua senha?</ion-title>
+  <ion-card>
+      <ion-card-content>
+        Digite seu e-mail ou telefone que encaminharemos um código de cadastro de nova senha.
+      </ion-card-content>
+    </ion-card>
+    <ion-item>
+      <ion-input placeholder="Email" [(ngModel)]="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-input placeholder="Telefone" [(ngModel)]="telefone"></ion-input>
+      </ion-item>
+      <button ion-button full (click)="EsqueciMinhaSenha()">Enviar</button>
+
+</ion-content>

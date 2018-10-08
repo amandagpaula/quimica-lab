@@ -1,0 +1,61 @@
+<!--
+  Generated template for the ConcentracaoSimplesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Concentração Simples</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-content>
+      Nesta aba você poderá inserir dados pré determinados e obter informações a respeito de concentração, massa ou
+      volume.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+
+    <ion-item>
+      <p>Massa (g)</p>
+      <ion-input placeholder="Massa (g)" [(ngModel)]="massa"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <p>Volume (L)</p>
+      <ion-input placeholder="Volume (L)" [(ngModel)]="volume"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full (click)="calcular()">Calcular</button>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full color="light" (click)="resetar()">Resetar</button>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-card [@resultadoState]="state">
+
+    <ion-card-header>
+      Resultado
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-row>
+        <b>Resultado:</b> {{ concentracao }} g/L
+      </ion-row>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
