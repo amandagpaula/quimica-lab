@@ -21,19 +21,40 @@
             </ion-card-content>
           </ion-card>
       <ion-list>
-        <ion-item>
-            <ion-input placeholder="Densidade (Kg/m³)"[(ngModel)]="Densidade"></ion-input>
-        </ion-item>
+
         <ion-item>
           <ion-input placeholder="Massa (Kg)"[(ngModel)]="Massa"></ion-input>
         </ion-item>
+
         <ion-item>
           <p>Volume (L)</p>
           <ion-input placeholder="Volume (m³)"[(ngModel)]="Volume"></ion-input>
         </ion-item>
-      </ion-list>
-      <button ion-button full (click)="Calcular()">Calcular</button>
-    </ion-content>
-    
+
+        <ion-item no-lines>
+            <button ion-button full (click)="calcular()">Calcular</button>
+          </ion-item>
+      
+          <ion-item no-lines>
+            <button ion-button full color="light" (click)="resetar()">Resetar</button>
+          </ion-item>
+      
+        </ion-list>
+      
+        <ion-card [@resultadoState]="state">
+      
+          <ion-card-header>
+            Resultado
+          </ion-card-header>
+      
+          <ion-card-content>
+            <ion-row>
+              <b>Resultado:</b> {{ densidade }} Kg/m³
+            </ion-row>
+          </ion-card-content>
+      
+        </ion-card>
+      
+      </ion-content>
 
 </ion-content>

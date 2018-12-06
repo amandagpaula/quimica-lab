@@ -1,41 +1,102 @@
-<!--
-  Generated template for the ForcaPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Força</ion-title>
+    <ion-title>
+      Força
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-    <ion-list>
-        <ion-item>
-            <ion-input placeholder="Entrada"[(ngModel)]="Entrada"></ion-input>
-          <ion-label></ion-label>
-          <ion-select [(ngModel)]="forca">
-            <ion-option value="poundal">Poundal (lbl)</ion-option>
-            <ion-option value="livraforca">Libra-Força (lbf)</ion-option>
-            <ion-option value="newton">Newton (N)</ion-option>
-            <ion-option value="quilogramaforca">Quilograma-Força (kgf)</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>Saída</ion-label>
-          <ion-label></ion-label>
-          <ion-select [(ngModel)]="forca1">
-              <ion-option value="poundal1">Poundal (lbl)</ion-option>
-              <ion-option value="livraforca1">Libra-Força (lbf)</ion-option>
-              <ion-option value="newton1">Newton (N)</ion-option>
-              <ion-option value="quilogramaforca1">Quilograma-Força (kgf)</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-      <button ion-button full (click)="Converter()">Converter</button>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Entrada</ion-label>
+      <ion-select [(ngModel)]="entrada" cancelText="Cancelar" interface="action-sheet">
+          <ion-option value="Dinas">Dinas (Dyn)</ion-option>
+          <ion-option value="Giganewtons">Giganewtons (GN)</ion-option>
+          <ion-option value="Joule por metro">Joule por metro (J/m)</ion-option>
+          <ion-option value="Kiloponds">Kiloponds (kp)</ion-option>
+          <ion-option value="Kips">Kips (kip)</ion-option>
+          <ion-option value="Libra Força">Libra Força (lbf)</ion-option>
+          <ion-option value="Long ton força">Long Ton Força (ltnf)</ion-option>
+          <ion-option value="Meganewtons">Meganewtons (Mn)</ion-option>
+          <ion-option value="Micronewtons">Micronewtons (µN)</ion-option>
+          <ion-option value="Miligrave Força">Miligrave Força (mGf)</ion-option>
+          <ion-option value="Milinewtons">Milinewtons (mN)</ion-option>
+          <ion-option value="Nanonewtons">Nanonewtons (nN)</ion-option>
+          <ion-option value="Newtons">Newtons (N)</ion-option>
+          <ion-option value="Onça Força">Onça Força (ozf)</ion-option>
+          <ion-option value="Pascalm">Pascal por Metro Quadrado (Pa)</ion-option>
+          <ion-option value="Poundal">Poundal (pdl)</ion-option>
+          <ion-option value="Quilograma Força">Quilograma Força (kgf)</ion-option>
+          <ion-option value="Quilonewton">Quilonewton (KN)</ion-option>
+          <ion-option value="Sepultura Força">Sepultura Força (Gf)</ion-option>
+          <ion-option value="Short Ton Força">Short Ton Força (stnf)</ion-option>
+          <ion-option value="Sthene">Sthène (sn)</ion-option>
+          <ion-option value="Tonelada Força">Tonelada Força (tnf)</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Saída</ion-label>
+      <ion-select [(ngModel)]="saida" cancelText="Cancelar" interface="action-sheet">
+        <ion-option value="Dinas">Dinas (Dyn)</ion-option>
+        <ion-option value="Giganewtons">Giganewtons (GN)</ion-option>
+        <ion-option value="Joule por metro">Joule por metro (J/m)</ion-option>
+        <ion-option value="Kiloponds">Kiloponds (kp)</ion-option>
+        <ion-option value="Kips">Kips (kip)</ion-option>
+        <ion-option value="Libra Força">Libra Força (lbf)</ion-option>
+        <ion-option value="Long ton força">Long Ton Força (ltnf)</ion-option>
+        <ion-option value="Meganewtons">Meganewtons (Mn)</ion-option>
+        <ion-option value="Micronewtons">Micronewtons (µN)</ion-option>
+        <ion-option value="Miligrave Força">Miligrave Força (mGf)</ion-option>
+        <ion-option value="Milinewtons">Milinewtons (mN)</ion-option>
+        <ion-option value="Nanonewtons">Nanonewtons (nN)</ion-option>
+        <ion-option value="Newtons">Newtons (N)</ion-option>
+        <ion-option value="Onça Força">Onça Força (ozf)</ion-option>
+        <ion-option value="Pascalm">Pascal por Metro Quadrado (Pa)</ion-option>
+        <ion-option value="Poundal">Poundal (pdl)</ion-option>
+        <ion-option value="Quilograma Força">Quilograma Força (kgf)</ion-option>
+        <ion-option value="Quilonewton">Quilonewton (KN)</ion-option>
+        <ion-option value="Sepultura Força">Sepultura Força (Gf)</ion-option>
+        <ion-option value="Short Ton Força">Short Ton Força (stnf)</ion-option>
+        <ion-option value="Sthene">Sthène (sn)</ion-option>
+        <ion-option value="Tonelada Força">Tonelada Força (tnf)</ion-option>
+
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Valor</ion-label>
+      <ion-input type="number" [(ngModel)]="valor"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full (click)="converter()">Converter</button>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full color="light" (click)="resetar()">Resetar</button>
+    </ion-item>
+
+  </ion-list>
+  <ion-card [@resultadoState]="state">
+
+    <ion-card-header>
+      Resultado
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-row>
+        <b>entrada:</b> {{ valor }} em {{ entrada }}
+      </ion-row>
+      <ion-row>
+        <b>saída:</b> {{ resultado }} em {{ saida }}
+      </ion-row>
+    </ion-card-content>
+
+  </ion-card>
 
 </ion-content>
+

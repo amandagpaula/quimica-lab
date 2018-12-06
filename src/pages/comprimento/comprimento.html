@@ -13,22 +13,41 @@
     <ion-item>
       <ion-label>Entrada</ion-label>
       <ion-select [(ngModel)]="entradac" cancelText="Cancelar" interface="action-sheet">
-        <ion-option value="metro">Metro (m)</ion-option>
         <ion-option value="centimetro">Centímetro (cm)</ion-option>
+        <ion-option value="decametro">Decâmetro (dam)</ion-option>
+        <ion-option value="decimetro">Decímetro (dm)</ion-option>
+        <ion-option value="hectometro">Hectômetro (hm)</ion-option>
+        <ion-option value="jarda">Jarda (yd)</ion-option>
+        <ion-option value="metro">Metro (m)</ion-option>
+        <ion-option value="micrometro">Micrômetro (µm)</ion-option>
+        <ion-option value="milha">Milha (mi)</ion-option>
+        <ion-option value="milha nautica">Milha Náutica (mn)</ion-option>
+        <ion-option value="milimetro">Milímetro (mm)</ion-option>
+        <ion-option value="nanometro">Nanômetro (nm)</ion-option>
         <ion-option value="pe">Pé (ft)</ion-option>
         <ion-option value="polegada">Polegada (in)</ion-option>
-        <ion-option value="milha">Milha</ion-option>
+        <ion-option value="quilometro">Quilômetro (Km)</ion-option>
+
       </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label>Saída</ion-label>
       <ion-select [(ngModel)]="saidac" cancelText="Cancelar" interface="action-sheet">
-        <ion-option value="metro">Metro (m)</ion-option>
-        <ion-option value="centimetro">Centímetro (cm)</ion-option>
-        <ion-option value="pe">Pé (ft)</ion-option>
-        <ion-option value="polegada">Polegada (in)</ion-option>
-        <ion-option value="milha">Milha</ion-option>
+          <ion-option value="centimetro">Centímetro (cm)</ion-option>
+          <ion-option value="decametro">Decâmetro (dam)</ion-option>
+          <ion-option value="decimetro">Decímetro (dm)</ion-option>
+          <ion-option value="hectometro">Hectômetro (hm)</ion-option>
+          <ion-option value="jarda">Jarda (yd)</ion-option>
+          <ion-option value="metro">Metro (m)</ion-option>
+          <ion-option value="micrometro">Micrômetro (µm)</ion-option>
+          <ion-option value="milha">Milha (mi)</ion-option>
+          <ion-option value="milha nautica">Milha Náutica (mn)</ion-option>
+          <ion-option value="milimetro">Milímetro (mm)</ion-option>
+          <ion-option value="nanometro">Nanômetro (nm)</ion-option>
+          <ion-option value="pe">Pé (ft)</ion-option>
+          <ion-option value="polegada">Polegada (in)</ion-option>
+          <ion-option value="quilometro">Quilômetro (Km)</ion-option>
       </ion-select>
     </ion-item>
 
@@ -46,12 +65,12 @@
     </ion-item>
 
   </ion-list>
-    <ion-card [@resultadoState]="state">
+  <ion-card [@resultadoState]="state">
 
     <ion-card-header>
       Resultado
     </ion-card-header>
-    
+
     <ion-card-content>
       <ion-row>
         <b>entrada:</b> {{ valorc }} em {{ entradac }}
@@ -64,4 +83,3 @@
   </ion-card>
 
 </ion-content>
-

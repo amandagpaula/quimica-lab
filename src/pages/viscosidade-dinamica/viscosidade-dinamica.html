@@ -1,42 +1,82 @@
-<!--
-  Generated template for the ViscosidadeDinamicaPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Viscosidade Dinâmica</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
+    <ion-navbar>
+      <ion-title>
+        Viscosidade Dinâmica
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
     <ion-list>
-        <ion-item>
-            <ion-input placeholder="Entrada"[(ngModel)]="Entrada"></ion-input>
-          <ion-label></ion-label>
-          <ion-select [(ngModel)]="viscosidadedinamica">
-            <ion-option value="VD1">Pa.s</ion-option>
-            <ion-option value="VD2">(Kgf.s)/m²</ion-option>
-            <ion-option value="VD3">lb/(ft.s)</ion-option>
-            <ion-option value="VD4">(lbf.s)/ft²</ion-option>
-            <ion-option value="VD5">cP</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>Saída</ion-label>
-          <ion-label></ion-label>
-          <ion-select [(ngModel)]="viscosidadedinamica1">
-              <ion-option value="VDA">Pa.s</ion-option>
-              <ion-option value="VDB">(Kgf.s)/m²</ion-option>
-              <ion-option value="VDC">lb/(ft.s)</ion-option>
-              <ion-option value="VDD">(lbf.s)/ft²</ion-option>
-              <ion-option value="VDE">cP</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-      <button ion-button full (click)="Converter()">Converter</button>
-</ion-content>
+  
+      <ion-item>
+        <ion-label>Entrada</ion-label>
+        <ion-select [(ngModel)]="entrada" cancelText="Cancelar" interface="action-sheet">
+            <ion-option value="Centipoise">Centipoise (cP)</ion-option>
+            <ion-option value="Dina Segundo por Centímetro Quadrado">Dina Segundo por Centímetro Quadrado (dyn.s/cm²)</ion-option>
+            <ion-option value="Grama por Centímetro Segundo">Grama por Centímetro Segundo (g/cm.s)</ion-option>
+            <ion-option value="Libra Força Segundo por Pé Quadrado">Libra Força Segundo por Pé Quadrado (lbf.s/ft²)</ion-option>
+            <ion-option value="Libra Força Segundo por Polegada Quadrada">Libra Força Segundo por Polegada Quadrada (lbf.s/in²)</ion-option>
+            <ion-option value="Libra por Pé Hora">Libra por Pé Hora (lb/ft.h)</ion-option>
+            <ion-option value="Libra por Pé Segundo">Libra por Pé Segundo (lb/ft.s)</ion-option>
+            <ion-option value="Newton Segundo por Metro Quadrado">Newton Segundo por Metro Quadrado (N.s/m²)</ion-option>
+            <ion-option value="Pascal Segundo">Pascal Segundo (Pa.s)</ion-option>
+            <ion-option value="Poise">Poise (P)</ion-option>
+            <ion-option value="Poundal Segundo por Pé Quadrado">Poundal Segundo por Pé Quadrado</ion-option>
+            <ion-option value="Quilograma por Metro Segundo">Quilograma por Metro Segundo (Kg/m²)</ion-option>
+            <ion-option value="Slug por Pé Segundo">Slug por Pé Segundo (slug/ft.s)</ion-option>
+         </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Saída</ion-label>
+        <ion-select [(ngModel)]="saida" cancelText="Cancelar" interface="action-sheet">
+            <ion-option value="Centipoise">Centipoise (cP)</ion-option>
+            <ion-option value="Dina Segundo por Centímetro Quadrado">Dina Segundo por Centímetro Quadrado (dyn.s/cm²)</ion-option>
+            <ion-option value="Grama por Centímetro Segundo">Grama por Centímetro Segundo (g/cm.s)</ion-option>
+            <ion-option value="Libra Força Segundo por Pé Quadrado">Libra Força Segundo por Pé Quadrado (lbf.s/ft²)</ion-option>
+            <ion-option value="Libra Força Segundo por Polegada Quadrada">Libra Força Segundo por Polegada Quadrada (lbf.s/in²)</ion-option>
+            <ion-option value="Libra por Pé Hora">Libra por Pé Hora (lb/ft.h)</ion-option>
+            <ion-option value="Libra por Pé Segundo">Libra por Pé Segundo (lb/ft.s)</ion-option>
+            <ion-option value="Newton Segundo por Metro Quadrado">Newton Segundo por Metro Quadrado (N.s/m²)</ion-option>
+            <ion-option value="Pascal Segundo">Pascal Segundo (Pa.s)</ion-option>
+            <ion-option value="Poise">Poise (P)</ion-option>
+            <ion-option value="Poundal Segundo por Pé Quadrado">Poundal Segundo por Pé Quadrado</ion-option>
+            <ion-option value="Quilograma por Metro Segundo">Quilograma por Metro Segundo (Kg/m²)</ion-option>
+            <ion-option value="Slug por Pé Segundo">Slug por Pé Segundo (slug/ft.s)</ion-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label stacked>Valor</ion-label>
+        <ion-input type="number" [(ngModel)]="valor"></ion-input>
+      </ion-item>
+  
+      <ion-item no-lines>
+        <button ion-button full (click)="converter()">Converter</button>
+      </ion-item>
+  
+      <ion-item no-lines>
+        <button ion-button full color="light" (click)="resetar()">Resetar</button>
+      </ion-item>
+  
+    </ion-list>
+    <ion-card [@resultadoState]="state">
+  
+      <ion-card-header>
+        Resultado
+      </ion-card-header>
+  
+      <ion-card-content>
+        <ion-row>
+          <b>entrada:</b> {{ valor }} em {{ entrada }}
+        </ion-row>
+        <ion-row>
+          <b>saída:</b> {{ resultado }} em {{ saida }}
+        </ion-row>
+      </ion-card-content>
+  
+    </ion-card>
+  
+  </ion-content>

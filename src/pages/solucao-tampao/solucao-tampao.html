@@ -1,16 +1,10 @@
-<!--
-  Generated template for the SolucaoTampaoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
 
-      <button ion-button icon-only menuToggle>
-          <ion-icon name="menu"></ion-icon>
-      </button>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
 
     <ion-title>Solução Tampão</ion-title>
   </ion-navbar>
@@ -19,12 +13,80 @@
 
 
 <ion-content padding>
-  Pesquise por um tampão:
-  <ion-searchbar
-  [(ngModel)]="myInput"
-  [showCancelButton]="shouldShowCancel"
-  (ionInput)="onInput($event)"
-  (ionCancel)="onCancel($event)">
-</ion-searchbar>
+
+  <ion-slides pager>
+
+  <ion-slide>
+      <img src="assets/imgs/slide11.png" alt="">
+    <h2>Solução Tampão</h2>
+    <div>
+      <p>
+          São resistentes às modificações de pH quando submetidas à presença de ácidos ou bases, ou ainda, por diluição.
+      </p>
+    </div>
+      
+  </ion-slide>
+
+  <ion-slide>
+      <img src="assets/imgs/mol.png" alt="">
+    <h2>Utilização</h2>
+    <div>
+        <p>
+            Estas soluções são utilizadas para manter constante o pH de um meio ou para preparar soluções de pH definido!
+        </p>
+      </div>
+  </ion-slide>
+
+  <ion-slide>
+      <img src="assets/imgs/slç2.png" alt="">
+    <h2>Constituição</h2>
+    <div>
+        <p>
+            As soluções tamponadas podem ser constituidas por pares de ácido-base conjudados. Também, podem ser compostas por soluções de ácido ou base fortes em concentrações moderadas!
+        </p>
+      </div>
+  </ion-slide>
+
+   <ion-slide>
+      <img src="assets/imgs/solução.png" alt="">
+    <h2>Capacidade Tamponante</h2>
+    <div>
+        <p>
+            Capacidade que as soluções tampão possuem para não sofrerem variações em seu pH. A capacidade tamponante de uma solução diz respeito ao limite para que um litro de solução varie o pH em uma unidade, ao receber determinada quantidade de ácidos ou bases fortes.
+        </p>
+      </div>
+  </ion-slide>
+
+  <ion-slide>
+    <img src="assets/imgs/cerebro.png" alt="">
+  <h2>Como funcionam as soluções tampão?</h2>
+  <div>
+      <p>
+        O mecanismo de funcionamento das soluções tamponadas ocorrem de acordo com o princípio de <strong>Le Chatelier</strong>.
+        Ao ser adicionado à uma solução tampão um ácido ou uma base, o equilíbrio reacional tenderá ocorrer no sentido de consumo dos íons hidrônio/hidroxila, neutralizando a pertubação do sistema.
+      </p>
+    </div>
+</ion-slide>
+
+<ion-slide>
+  <img src="assets/imgs/slç3.png" alt="">
+<h2>Preparo de Soluções Tamponadas</h2>
+<div>
+    <p>
+      Soluções tamponadas são provenientes da mistura de duas soluções preparadas previamente e de concentração determinada. Esta junção deverá ocorrer sob agitação magnética e mediante à verificação de pH.  
+    </p>
+  </div>
+</ion-slide>
+
+<ion-slide>
+  <img src="assets/imgs/slç5.png" alt="">
+<h2>Ajustando pH </h2>
+<div>
+    <p>
+      Em casos de necessidade de ajustes de pH, ácidos ou bases de elevada concentração deverão ser introduzidos à mistura lentamente, com o auxílio de uma pipeta ou conta gotas. Ao escolher o ácido ou a base de regulagem leve em consideração a composição da solução tamponada.    
+    </p>
+  </div>
+</ion-slide>
+</ion-slides>
 
 </ion-content>

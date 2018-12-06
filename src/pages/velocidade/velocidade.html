@@ -1,49 +1,80 @@
-<!--
-  Generated template for the VelocidadePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Velocidade</ion-title>
+    <ion-title>
+      Velocidade
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-    <ion-list>
-        <ion-item>
-            <ion-input placeholder="Entrada"[(ngModel)]="Entrada"></ion-input>
-          <ion-label></ion-label>
-          <ion-select [(ngModel)]="velocidade">
-            <ion-option value="V1">ft/s</ion-option>
-            <ion-option value="V2">Km/h</ion-option>
-            <ion-option value="V3">m/s</ion-option>
-            <ion-option value="V4">mi/h</ion-option>
-            <ion-option value="V5">cm/s</ion-option>
-            <ion-option value="V6">nó</ion-option>
-            <ion-option value="V7">mi/min</ion-option>
-            <ion-option value="V8">milha marítima/hora</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>Saída</ion-label>
-          <ion-label></ion-label>
-          <ion-select [(ngModel)]="velocidade1">
-              <ion-option value="V1">ft/s</ion-option>
-              <ion-option value="V2">Km/h</ion-option>
-              <ion-option value="V3">m/s</ion-option>
-              <ion-option value="V4">mi/h</ion-option>
-              <ion-option value="V5">cm/s</ion-option>
-              <ion-option value="V6">nó</ion-option>
-              <ion-option value="V7">mi/min</ion-option>
-              <ion-option value="V8">milha marítima/hora</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-      <button ion-button full (click)="Converter()">Converter</button>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Entrada</ion-label>
+      <ion-select [(ngModel)]="entrada" cancelText="Cancelar" interface="action-sheet">
+          <ion-option value="Knots">Knots (Knot)</ion-option>
+          <ion-option value="Metros por Segundo">Metros por Segundo (m/s)</ion-option>
+          <ion-option value="Micrometros por Segundo">Micrometros por Segundo (µm/s)</ion-option>
+          <ion-option value="Milhas por Hora">Milhas por Hora (mph)</ion-option>
+          <ion-option value="Milhas por Segundo">Milhas por Segundo (mps)</ion-option>
+          <ion-option value="Milimetros por Segundo">Milimetros por Segundo (mm/s)</ion-option>
+          <ion-option value="Nó">Nó </ion-option>
+          <ion-option value="Pé por Segundo">Pé por Segundo (ft/s)</ion-option>
+          <ion-option value="Quilômetros por Hora">Quilômetros por Hora (Km/h)</ion-option>
+          <ion-option value="Quilômeteos por Segundo">Quilômeteos por Segundo (Km/s)</ion-option>
+          <ion-option value="Velocidade da Luz">Velocidade da Luz</ion-option>
+          <ion-option value="Velocidade do Som">Velocidade do Som</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Saída</ion-label>
+      <ion-select [(ngModel)]="saida" cancelText="Cancelar" interface="action-sheet">            
+        <ion-option value="Knots">Knots (Knot)</ion-option>
+        <ion-option value="Metros por Segundo">Metros por Segundo (m/s)</ion-option>
+        <ion-option value="Micrometros por Segundo">Micrometros por Segundo (µm/s)</ion-option>
+        <ion-option value="Milhas por Hora">Milhas por Hora (mph)</ion-option>
+        <ion-option value="Milhas por Segundo">Milhas por Segundo (mps)</ion-option>
+        <ion-option value="Milimetros por Segundo">Milimetros por Segundo (mm/s)</ion-option>
+        <ion-option value="Nó">Nó </ion-option>
+        <ion-option value="Pé por Segundo">Pé por Segundo (ft/s)</ion-option>
+        <ion-option value="Quilômetros por Hora">Quilômetros por Hora (Km/h)</ion-option>
+        <ion-option value="Quilômeteos por Segundo">Quilômeteos por Segundo (Km/s)</ion-option>
+        <ion-option value="Velocidade da Luz">Velocidade da Luz</ion-option>
+        <ion-option value="Velocidade do Som">Velocidade do Som</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Valor</ion-label>
+      <ion-input type="number" [(ngModel)]="valor"></ion-input>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full (click)="converter()">Converter</button>
+    </ion-item>
+
+    <ion-item no-lines>
+      <button ion-button full color="light" (click)="resetar()">Resetar</button>
+    </ion-item>
+
+  </ion-list>
+  <ion-card [@resultadoState]="state">
+
+    <ion-card-header>
+      Resultado
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-row>
+        <b>entrada:</b> {{ valor }} em {{ entrada }}
+      </ion-row>
+      <ion-row>
+        <b>saída:</b> {{ resultado }} em {{ saida }}
+      </ion-row>
+    </ion-card-content>
+
+  </ion-card>
 
 </ion-content>

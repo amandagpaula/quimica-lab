@@ -1,42 +1,66 @@
-<!--
-  Generated template for the VolumeEspecificoVolumeMolarPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Volume Especifico e Volume Molar</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
+    <ion-navbar>
+      <ion-title>
+        Volume Especifico Volume Molar
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
     <ion-list>
-        <ion-item>
-            <ion-input placeholder="Entrada"[(ngModel)]="Entrada"></ion-input>
-          <ion-label></ion-label>
-          <ion-select [(ngModel)]="volesp">
-            <ion-option value="VEVM1">cm³/g</ion-option>
-            <ion-option value="VEVM2">m³/Kg</ion-option>
-            <ion-option value="VEVM3">ft³/lbm</ion-option>
-            <ion-option value="VEVM4">cm³/mol</ion-option>
-            <ion-option value="VEVM5">ft³/lbmol</ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>Saída</ion-label>
-          <ion-label></ion-label>
-          <ion-select [(ngModel)]="volesp1">
-              <ion-option value="VEVM1">cm³/g</ion-option>
-              <ion-option value="VEVM2">m³/Kg</ion-option>
-              <ion-option value="VEVM3">ft³/lbm</ion-option>
-              <ion-option value="VEVM4">cm³/mol</ion-option>
-              <ion-option value="VEVM5">ft³/lbmol</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-      <button ion-button full (click)="Converter()">Converter</button>
-</ion-content>
+  
+      <ion-item>
+        <ion-label>Entrada</ion-label>
+        <ion-select [(ngModel)]="entrada" cancelText="Cancelar" interface="action-sheet">
+          <ion-option value="Centimetro Cúbico por mol">Centimetro Cúbico por mol (cm³/mol)</ion-option>
+          <ion-option value="Decímetro Cúbico por mol">Decímetro Cúbico por mol (dm³/mol)</ion-option>
+          <ion-option value="Litro por mol">Litro por mol (L/mol)</ion-option>
+          <ion-option value="Mililitro por mol">Mililitro por mol (ml/mol)</ion-option>
+          <ion-option value="Metro Cúbico por mol">Metro Cúbico por mol (m³/mol)</ion-option>
+         </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Saída</ion-label>
+        <ion-select [(ngModel)]="saida" cancelText="Cancelar" interface="action-sheet">
+            <ion-option value="Centimetro Cúbico por mol">Centimetro Cúbico por mol (cm³/mol)</ion-option>
+            <ion-option value="Decímetro Cúbico por mol">Decímetro Cúbico por mol (dm³/mol)</ion-option>
+            <ion-option value="Litro por mol">Litro por mol (L/mol)</ion-option>
+            <ion-option value="Mililitro por mol">Mililitro por mol (ml/mol)</ion-option>
+            <ion-option value="Metro Cúbico por mol">Metro Cúbico por mol (m³/mol)</ion-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label stacked>Valor</ion-label>
+        <ion-input type="number" [(ngModel)]="valor"></ion-input>
+      </ion-item>
+  
+      <ion-item no-lines>
+        <button ion-button full (click)="converter()">Converter</button>
+      </ion-item>
+  
+      <ion-item no-lines>
+        <button ion-button full color="light" (click)="resetar()">Resetar</button>
+      </ion-item>
+  
+    </ion-list>
+    <ion-card [@resultadoState]="state">
+  
+      <ion-card-header>
+        Resultado
+      </ion-card-header>
+  
+      <ion-card-content>
+        <ion-row>
+          <b>entrada:</b> {{ valor }} em {{ entrada }}
+        </ion-row>
+        <ion-row>
+          <b>saída:</b> {{ resultado }} em {{ saida }}
+        </ion-row>
+      </ion-card-content>
+  
+    </ion-card>
+  
+  </ion-content>
